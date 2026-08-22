@@ -16,11 +16,15 @@ DIFFICULTIES = {
 
 def get_difficulty():
     print("Select difficulty: [1] Easy  [2] Medium  [3] Hard")
-    player_choice = input("> ")
+    while True:
+        player_choice = input("> ")
 
-    if player_choice == "1":
+        if player_choice == "1":
+            return DIFFICULTIES["easy"]
+        elif player_choice == "2":
+            return DIFFICULTIES["medium"]
+        elif player_choice == "3":
+            return DIFFICULTIES["hard"]
+        else:
+            print("Pick a difficulty")
 
-    elif player_choice == "2":
-
-    elif player_choice == "3":
-        
