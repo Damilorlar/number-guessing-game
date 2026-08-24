@@ -1,19 +1,25 @@
+from utils import get_valid_guess, get_difficulty
+
 import random
 
-number= random.randint(1,100)
-guess = 0
-limit = 0
 
-while guess != number:
-    guess = int(input("Enter Your guess:"))
+difficulty = get_difficulty()
+
+minimum = difficulty["min"]
+maximum = difficulty["max"]
+attempts = difficulty["attempts"]
+
+print(f"Guess a number between {minimum} and {maximum}")
+print(f"You have {attempts} attempts.")
+
+number = random.randint(minimum, maximum)
+while attempts > 0:
+    guess=get_valid_guess()
+    attempts -= 1
     if (guess < number):
-            print("Guess Higher")
+                print("Guess Higher")
     elif (guess > number):
-            print("Guess Lower")
+                print("Guess Lower")
     else :
-            print("You guess correctly.")
-    limit +=1
-    if limit == 3:
-        print("You have reach your limit")
-        break
-  
+        print("You guess correctly.")
+print("You have reach your limit")
