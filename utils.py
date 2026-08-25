@@ -1,9 +1,17 @@
 #
+def greet():
+    return """
+    =================================================
+             Welcome to Number Guessing Game 
+    =================================================
+    """
+   
+
 def get_valid_guess():
     while True:
         try:
-            guess = int(input("Enter your guess: "))
-            return guess
+            text = int(input("Enter your guess: "))
+            return text
         except ValueError:
             print("That's not a valid number. Try again.")
 
